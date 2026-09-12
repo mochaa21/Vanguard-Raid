@@ -1,4 +1,16 @@
-# Fungsi class, print, insert, dan delete lu taruh di atas ini...
+class  GuildMembers:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+def print_gm(node):
+    currentNode = node
+    while currentNode:
+        print(currentNode.data, end=" -> ")
+        currentNode = currentNode.next
+    print("null")
+
+
 
 # 1. Inisialisasi Formasi Awal (Linked List)
 node1 = GuildMembers("Angelica ven Ashera")

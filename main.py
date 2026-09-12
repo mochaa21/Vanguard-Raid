@@ -37,7 +37,6 @@ def insert_gm(head, newNode, position):
     currentNode.next = newNode
     return head
 
-# 1. Inisialisasi Formasi Awal (Linked List)
 node1 = GuildMembers("Angelica ven Ashera")
 node2 = GuildMembers("Serafina de Lavilliant")
 node3 = GuildMembers("Sylvie Leywin")
@@ -45,16 +44,16 @@ node3 = GuildMembers("Sylvie Leywin")
 node1.next = node2
 node2.next = node3
 
-# 2. Radar Musuh (Array/List Biasa)
 enemy_waves = ["Goblin", "Witch Cultist", "Orc", "Boss: Petelgeuse"]
 
-# 3. Fungsi Simulasi
 def raid_simulation(waves: list, vanguard_head):
-    # Lakukan looping pada array 'waves'
-    # Tangkap kondisi "Witch Cultist" dan "Boss: Petelgeuse"
-    # Eksekusi insert_gm atau delete_gm pada vanguard_head
-    # Return vanguard_head yang sudah dimodifikasi
-    pass
+    for wave in waves:
+        if wave == "Witch Cultist":
+            vanguard_head = delete_gm(vanguard_head, "Serafina de Lavilliant")
+        elif wave == "Boss: Petelgeuse":
+            newNode = GuildMembers("Subaru")
+            vanguard_head = insert_gm(vanguard_head, newNode, 1)
+    return vanguard_head
 
 # --- EKSEKUSI ---
 print("Formasi Sebelum Raid:")

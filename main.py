@@ -1,4 +1,4 @@
-class  GuildMembers:
+class GuildMembers:
     def __init__(self, data):
         self.data = data
         self.next = None

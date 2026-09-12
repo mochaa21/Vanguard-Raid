@@ -10,7 +10,32 @@ def print_gm(node):
         currentNode = currentNode.next
     print("null")
 
+def delete_gm(head, target_gm):
+    if head.data == target_gm:
+        return head.next
+    
+    currentNode = head
+    while currentNode.next:
+        if currentNode.next.data == target_gm:
+            currentNode.next = currentNode.next.next
+            break
+        currentNode = currentNode.next
+    return head
 
+def insert_gm(head, newNode, position):
+    if position == 1:
+        newNode.next = head
+        return newNode
+
+    currentNode = head
+    for _ in range(position - 2):
+        if currentNode.next == None:
+            break
+        currentNode = currentNode.next
+
+    newNode.next = currentNode.next
+    currentNode.next = newNode
+    return head
 
 # 1. Inisialisasi Formasi Awal (Linked List)
 node1 = GuildMembers("Angelica ven Ashera")
